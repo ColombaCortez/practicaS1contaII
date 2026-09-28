@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cátedra Contabilidad II - Preparación Integral Solemne 1</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1e3c72',
+                            900: '#0f2027',
+                            950: '#0a141a',
+                        },
+                        accentBlue: '#2a5298',
+                        crimson: {
+                            600: '#c0392b',
+                            700: '#a93226',
+                            800: '#922b21',
+                        },
+                        surface: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome for clean educational icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        code, pre { font-family: 'Fira Code', monospace; }
+        .gradient-header {
+            background: linear-gradient(135deg, #0f2027 0%, #1e3c72 50%, #2a5298 100%);
+        }
+        .crimson-gradient {
+            background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+        }
+        .scroll-mt-custom {
+            scroll-margin-top: 5.5rem;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-crimson-600 selection:text-white">
+
+    <!-- Navigation Bar Sticky -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-lg bg-navy-800 flex items-center justify-center text-white font-bold text-xl shadow">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold text-navy-900 leading-tight">CONTA II <span class="text-crimson-600 font-extrabold">S1</span></h1>
+                    <p class="text-xs text-slate-500 font-medium hidden sm:block">Cátedra & Taller Preparatorio: Costeo y Resultados</p>
+                </div>
+            </div>
+            <nav class="hidden lg:flex items-center space-x-1 font-semibold text-xs text-slate-600 uppercase tracking-wider">
+                <a href="#teoria" class="px-3 py-2 rounded-md hover:bg-slate-100 hover:text-navy-800 transition">Teoría</a>
+                <a href="#comentes" class="px-3 py-2 rounded-md hover:bg-slate-100 hover:text-navy-800 transition">Comentes V/F/I</a>
+                <a href="#multiple" class="px-3 py-2 rounded-md hover:bg-slate-100 hover:text-navy-800 transition">Selección</a>
+                <a href="#clasificacion" class="px-3 py-2 rounded-md hover:bg-slate-100 hover:text-navy-800 transition">Taller Clasificación</a>
+                <a href="#metodologia" class="px-3 py-2 rounded-md hover:bg-slate-100 hover:text-navy-800 transition">Paso a Paso</a>
+                <a href="#ejercicios" class="px-3 py-2 rounded-md hover:bg-slate-100 hover:text-navy-800 transition">Ejercicios</a>
+                <a href="#solucionario" class="px-3 py-2 rounded-md bg-crimson-600 text-white hover:bg-crimson-700 transition">Solucionario</a>
+            </nav>
+            <div class="flex items-center space-x-2">
+                <a href="#clasificacion" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-navy-800 text-white shadow hover:bg-navy-900 transition flex items-center gap-1">
+                    <i class="fa-solid fa-calculator"></i> Practicar Ahora
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Professor Welcome Banner -->
+    <section class="gradient-header text-white py-12 px-4 sm:px-6 lg:px-8 shadow-xl relative overflow-hidden">
+        <div class="absolute inset-0 bg-repeat opacity-5" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 24px 24px;"></div>
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-crimson-600/90 text-white text-xs font-semibold uppercase tracking-wider mb-4 border border-crimson-500/50">
+                <i class="fa-solid fa-graduation-cap"></i> Cátedra Universitaria de Contabilidad Gerencial y de Costos
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">
+                Manual Maestro & Simulador: <br><span class="text-rose-300">Solemne 1 de Contabilidad II</span>
+            </h2>
+            <div class="bg-navy-950/60 p-5 rounded-2xl border border-white/10 mt-6 backdrop-blur">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-full bg-rose-600 text-white flex-shrink-0 flex items-center justify-center font-bold text-xl shadow-lg border-2 border-white/20">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-white mb-1">Mensaje del Profesor Contador:</h3>
+                        <p class="text-sm text-slate-200 leading-relaxed">
+                            "Estimado/a estudiante: Para aprobar con distinción la Solemne 1, grábate una regla de oro: <strong class="text-rose-300 underline underline-offset-2">Primero clasifique, después calcule</strong>. Un cálculo aritmético perfecto pero con una partida mal clasificada (por ejemplo, llevar la comisión de ventas al inventario) invalida conceptualmente todo el Estado de Resultados. Estudia este manual, haz los talleres en tiempo real y revisa cada paso analítico en el solucionario. ¡Vamos por ese 7.0!"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+        <!-- SECCIÓN 1: MARCO TEÓRICO RIGUROSO -->
+        <section id="teoria" class="scroll-mt-custom">
+            <div class="border-b-2 border-navy-800 pb-3 mb-8 flex items-center justify-between">
+                <div>
+                    <span class="text-xs font-bold text-crimson-600 uppercase tracking-widest">Fundamentos Conceptuales</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900">1. Marco Teórico Esencial</h2>
+                </div>
+                <span class="text-navy-800 text-2xl"><i class="fa-solid fa-book-bookmark"></i></span>
+            </div>
+
+            <!-- Grid de conceptos -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 border-t-4 border-t-navy-800 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-navy-800 flex items-center justify-center mb-4 text-lg font-bold">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-navy-900 mb-2">1.1 Tres Perspectivas del Costo</h3>
+                        <ul class="text-xs text-slate-600 space-y-2.5">
+                            <li><strong class="text-slate-900">Comportamiento:</strong> Variable (cambia proporcional al volumen; costo unitario fijo), Fijo (monto total inalterado; costo unitario variable), Mixto (base fija + tramo variable).</li>
+                            <li><strong class="text-slate-900">Función:</strong> Fabricación (MPD, MOD, CIF incurridos en planta) vs. Ventas & Administración (comercialización, sala de ventas, gerencia general).</li>
+                            <li><strong class="text-slate-900">Momento / Tratamiento:</strong> Costo del Producto (se activa en el Inventario y se expira con la venta) vs. Costo del Período (va directo al resultado como gasto del mes).</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-semibold text-crimson-600">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Cuidado: Comisión de ventas es variable, pero es Gasto del Período, NUNCA inventario.
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 border-t-4 border-t-crimson-600 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-red-50 text-crimson-600 flex items-center justify-center mb-4 text-lg font-bold">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-navy-900 mb-2">1.2 Absorbente vs. Variable</h3>
+                        <ul class="text-xs text-slate-600 space-y-2.5">
+                            <li><strong class="text-slate-900">Costeo Absorbente (Tradicional):</strong> Incluye MPD + MOD + CIFv + <em>CIF fijos</em> en el costo unitario del producto. CIF fijos quedan 'atrapados' en existencias.</li>
+                            <li><strong class="text-slate-900">Costeo Variable (Directo):</strong> Costo del producto = MPD + MOD + CIFv. Los <em>CIF fijos totales</em> se consideran costo del período (100% a resultados).</li>
+                            <li><strong class="text-slate-900">Estados de Resultados:</strong> Absorbente genera <span class="font-bold text-slate-900">Margen Bruto</span>; Variable genera <span class="font-bold text-slate-900">Margen de Contribución</span>.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-semibold text-navy-800">
+                        <i class="fa-solid fa-circle-info"></i> La utilidad difiere exclusivamente por el CIF fijo asignado a los inventarios.
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 border-t-4 border-t-accentBlue flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-accentBlue flex items-center justify-center mb-4 text-lg font-bold">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-navy-900 mb-2">1.3 Efecto Inventarios y Conciliación</h3>
+                        <ul class="text-xs text-slate-600 space-y-2.5">
+                            <li><strong class="text-slate-900">Prod &gt; Ventas:</strong> Inventario final sube. Utilidad Absorbente &gt; Variable (se retienen CIF fijos en bodega).</li>
+                            <li><strong class="text-slate-900">Prod = Ventas:</strong> Sin cambio neto de stock. Utilidad Absorbente = Variable (si no hay inventario inicial).</li>
+                            <li><strong class="text-slate-900">Prod &lt; Ventas:</strong> Inventario baja. Utilidad Absorbente &lt; Variable (se liberan CIF fijos de meses anteriores).</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-mono bg-slate-50 p-2 rounded text-slate-700">
+                        Δ Utilidad = CIFf Inv. Final − CIFf Inv. Inicial
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cuadro comparativo EERR -->
+            <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-200">
+                <h4 class="text-base font-bold text-navy-900 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-arrows-split-up-and-left text-crimson-600"></i>
+                    Estructura Comparativa de Estados de Resultados
+                </h4>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-sm">
+                    <!-- Estado Absorbente -->
+                    <div class="border border-navy-800/30 rounded-xl overflow-hidden">
+                        <div class="bg-navy-800 text-white font-bold p-3 text-center text-xs tracking-wider uppercase">
+                            Costeo Absorbente (Enfoque Funcional)
+                        </div>
+                        <div class="p-4 space-y-2 bg-slate-50 text-xs font-mono">
+                            <div class="flex justify-between py-1 border-b border-slate-200"><span>Ventas (P × Q vendida)</span><span class="font-bold text-navy-800">(+) Ingresos</span></div>
+                            <div class="flex justify-between py-1 text-crimson-600 border-b border-slate-200"><span>(-) Costo de Ventas Absorbente (Q vendida × Cu_abs)</span><span>(-) Costo Prod.</span></div>
+                            <div class="flex justify-between py-1 font-bold text-slate-900 bg-white px-2 rounded"><span>(=) MARGEN BRUTO</span><span>(=) Resultado</span></div>
+                            <div class="flex justify-between py-1 text-slate-600 border-b border-slate-200"><span>(-) Gastos de Administración y Ventas (Fijos y Var)</span><span>(-) Gasto Período</span></div>
+                            <div class="flex justify-between py-1.5 font-bold text-white bg-navy-800 px-2 rounded mt-2"><span>(=) RESULTADO OPERACIONAL ABSORBENTE</span><span>(=) Utilidad</span></div>
+                        </div>
+                        <p class="p-3 text-[11px] text-slate-600 bg-white">
+                            * Cu_abs = MPDu + MODu + CIFvu + (CIF Fijo Total ÷ Q producida).
+                        </p>
+                    </div>
+
+                    <!-- Estado Variable -->
+                    <div class="border border-crimson-600/30 rounded-xl overflow-hidden">
+                        <div class="bg-crimson-600 text-white font-bold p-3 text-center text-xs tracking-wider uppercase">
+                            Costeo Variable / Directo (Enfoque Marginal)
+                        </div>
+                        <div class="p-4 space-y-2 bg-slate-50 text-xs font-mono">
+                            <div class="flex justify-between py-1 border-b border-slate-200"><span>Ventas (P × Q vendida)</span><span class="font-bold text-navy-800">(+) Ingresos</span></div>
+                            <div class="flex justify-between py-1 text-crimson-600 border-b border-slate-200"><span>(-) Costos Variables Fabricación Vendidos (Qv × Cuv)</span><span>(-) Costo Var.</span></div>
+                            <div class="flex justify-between py-1 text-crimson-600 border-b border-slate-200"><span>(-) Gastos Variables Ventas & Adm. (ej: Comisiones)</span><span>(-) Gasto Var.</span></div>
+                            <div class="flex justify-between py-1 font-bold text-slate-900 bg-white px-2 rounded"><span>(=) MARGEN DE CONTRIBUCIÓN TOTAL</span><span>(=) Margen</span></div>
+                            <div class="flex justify-between py-1 text-slate-600 border-b border-slate-200"><span>(-) CIF Fijos Totales del Período</span><span>(-) Fijo Fab.</span></div>
+                            <div class="flex justify-between py-1 text-slate-600 border-b border-slate-200"><span>(-) Gastos Fijos de Administración y Ventas</span><span>(-) Fijo Op.</span></div>
+                            <div class="flex justify-between py-1.5 font-bold text-white bg-crimson-600 px-2 rounded mt-2"><span>(=) RESULTADO OPERACIONAL VARIABLE</span><span>(=) Utilidad</span></div>
+                        </div>
+                        <p class="p-3 text-[11px] text-slate-600 bg-white">
+                            * Cuv = MPDu + MODu + CIFvu (NO incluye ningún costo fijo).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: COMENTES ESTILO V / F / I -->
+        <section id="comentes" class="scroll-mt-custom">
+            <div class="border-b-2 border-crimson-600 pb-3 mb-8 flex items-center justify-between">
+                <div>
+                    <span class="text-xs font-bold text-navy-800 uppercase tracking-widest">Entrenamiento Analítico de Cátedra</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900">2. Comentes de Prueba: Verdadero, Falso o Incierto</h2>
+                </div>
+                <span class="text-crimson-600 text-2xl"><i class="fa-solid fa-comments"></i></span>
+            </div>
+            <p class="text-sm text-slate-600 mb-6">
+                En la solemne, la justificación representa el 80% del puntaje. Lee cada afirmación, evalúa si es Verdadera (V), Falsa (F) o Incierta (I) haciendo clic en los botones y revisa la pauta del profesor.
+            </p>
+
+            <div class="space-y-4" id="comentes-container">
+                <!-- Comente 1 -->
+                <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm" id="comente-card-1">
+                    <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-3">
+                        <div class="flex items-start gap-3">
+                            <span class="w-7 h-7 rounded-full bg-navy-800 text-white flex-shrink-0 flex items-center justify-center font-bold text-xs">1</span>
+                            <p class="text-sm font-semibold text-slate-900 leading-snug">
+                                "Un aumento en el volumen de producción siempre incrementa la utilidad operacional reportada bajo el método de costeo variable, dado que se generan economías de escala."
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-2 flex-shrink-0">
+                            <button onclick="checkComente(1, 'F', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">V</button>
+                            <button onclick="checkComente(1, 'F', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">F</button>
+                            <button onclick="checkComente(1, 'F', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">I</button>
+                        </div>
+                    </div>
+                    <div id="comente-feed-1" class="hidden mt-3 p-3.5 bg-slate-50 rounded-lg border text-xs leading-relaxed"></div>
+                </div>
+
+                <!-- Comente 2 -->
+                <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm" id="comente-card-2">
+                    <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-3">
+                        <div class="flex items-start gap-3">
+                            <span class="w-7 h-7 rounded-full bg-navy-800 text-white flex-shrink-0 flex items-center justify-center font-bold text-xs">2</span>
+                            <p class="text-sm font-semibold text-slate-900 leading-snug">
+                                "Si en un período las unidades producidas superan exactamente a las vendidas, la utilidad bajo costeo absorbente será estrictamente superior a la utilidad obtenida mediante costeo variable."
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-2 flex-shrink-0">
+                            <button onclick="checkComente(2, 'I', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">V</button>
+                            <button onclick="checkComente(2, 'I', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">F</button>
+                            <button onclick="checkComente(2, 'I', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">I</button>
+                        </div>
+                    </div>
+                    <div id="comente-feed-2" class="hidden mt-3 p-3.5 bg-slate-50 rounded-lg border text-xs leading-relaxed"></div>
+                </div>
+
+                <!-- Comente 3 -->
+                <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm" id="comente-card-3">
+                    <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-3">
+                        <div class="flex items-start gap-3">
+                            <span class="w-7 h-7 rounded-full bg-navy-800 text-white flex-shrink-0 flex items-center justify-center font-bold text-xs">3</span>
+                            <p class="text-sm font-semibold text-slate-900 leading-snug">
+                                "Cualquier costo que presente un comportamiento variable con respecto al nivel de actividad debe ser considerado como parte del costo inventariable del producto."
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-2 flex-shrink-0">
+                            <button onclick="checkComente(3, 'F', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">V</button>
+                            <button onclick="checkComente(3, 'F', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">F</button>
+                            <button onclick="checkComente(3, 'F', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">I</button>
+                        </div>
+                    </div>
+                    <div id="comente-feed-3" class="hidden mt-3 p-3.5 bg-slate-50 rounded-lg border text-xs leading-relaxed"></div>
+                </div>
+
+                <!-- Comente 4 -->
+                <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm" id="comente-card-4">
+                    <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-3">
+                        <div class="flex items-start gap-3">
+                            <span class="w-7 h-7 rounded-full bg-navy-800 text-white flex-shrink-0 flex items-center justify-center font-bold text-xs">4</span>
+                            <p class="text-sm font-semibold text-slate-900 leading-snug">
+                                "Bajo costeo absorbente, un gerente podría manipular e inflar artificialmente la utilidad del ejercicio simplemente fabricando unidades en exceso, aunque no tenga compradores para ellas."
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-2 flex-shrink-0">
+                            <button onclick="checkComente(4, 'V', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">V</button>
+                            <button onclick="checkComente(4, 'F', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">F</button>
+                            <button onclick="checkComente(4, 'I', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">I</button>
+                        </div>
+                    </div>
+                    <div id="comente-feed-4" class="hidden mt-3 p-3.5 bg-slate-50 rounded-lg border text-xs leading-relaxed"></div>
+                </div>
+
+                <!-- Comente 5 -->
+                <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm" id="comente-card-5">
+                    <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-3">
+                        <div class="flex items-start gap-3">
+                            <span class="w-7 h-7 rounded-full bg-navy-800 text-white flex-shrink-0 flex items-center justify-center font-bold text-xs">5</span>
+                            <p class="text-sm font-semibold text-slate-900 leading-snug">
+                                "La elección entre métodos de valorización de inventarios (FIFO o PMP) determina qué partidas de costos ingresan a formar parte del costo de producción."
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-2 flex-shrink-0">
+                            <button onclick="checkComente(5, 'F', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">V</button>
+                            <button onclick="checkComente(5, 'F', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">F</button>
+                            <button onclick="checkComente(5, 'I', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">I</button>
+                        </div>
+                    </div>
+                    <div id="comente-feed-5" class="hidden mt-3 p-3.5 bg-slate-50 rounded-lg border text-xs leading-relaxed"></div>
+                </div>
+
+                <!-- Comente 6 -->
+                <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm" id="comente-card-6">
+                    <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-3">
+                        <div class="flex items-start gap-3">
+                            <span class="w-7 h-7 rounded-full bg-navy-800 text-white flex-shrink-0 flex items-center justify-center font-bold text-xs">6</span>
+                            <p class="text-sm font-semibold text-slate-900 leading-snug">
+                                "A lo largo de la vida total de una empresa, una vez liquidadas todas las existencias finales a cero, la suma acumulada de utilidades bajo costeo absorbente será idéntica a la del costeo variable."
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-2 flex-shrink-0">
+                            <button onclick="checkComente(6, 'V', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">V</button>
+                            <button onclick="checkComente(6, 'F', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">F</button>
+                            <button onclick="checkComente(6, 'I', this)" class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 transition">I</button>
+                        </div>
+                    </div>
+                    <div id="comente-feed-6" class="hidden mt-3 p-3.5 bg-slate-50 rounded-lg border text-xs leading-relaxed"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: PREGUNTAS DE SELECCIÓN MÚLTIPLE -->
+        <section id="multiple" class="scroll-mt-custom">
+            <div class="border-b-2 border-navy-800 pb-3 mb-8 flex items-center justify-between">
+                <div>
+                    <span class="text-xs font-bold text-crimson-600 uppercase tracking-widest">Test Rápido de Dominio</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900">3. Selección Múltiple Conceptual y Práctica</h2>
+                </div>
+                <span class="text-navy-800 text-2xl"><i class="fa-solid fa-list-check"></i></span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="quiz-container">
+                <!-- Q1 -->
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm" id="mc-1">
+                    <span class="text-[11px] font-bold text-crimson-600 uppercase">Pregunta 1 · Clasificación</span>
+                    <p class="text-sm font-semibold text-navy-900 mt-1 mb-3">
+                        ¿Cuál de las siguientes partidas constituye un COSTO DEL PRODUCTO bajo costeo por absorción, pero es COSTO DEL PERÍODO bajo costeo variable?
+                    </p>
+                    <div class="space-y-2 text-xs">
+                        <button onclick="checkMC(1, 'A', false)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition opt">A) Comisiones pagadas a los vendedores (3% de la venta)</button>
+                        <button onclick="checkMC(1, 'B', true)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition opt">B) Sueldo mensual del supervisor de planta productiva</button>
+                        <button onclick="checkMC(1, 'C', false)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition opt">C) Energía eléctrica variable consumida por las máquinas</button>
+                        <button onclick="checkMC(1, 'D', false)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition opt">D) Arriendo mensual de las oficinas administrativas</button>
+                    </div>
+                    <div class="feedback hidden mt-3 p-3 rounded text-xs bg-slate-50"></div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm" id="mc-2">
+                    <span class="text-[11px] font-bold text-crimson-600 uppercase">Pregunta 2 · Cálculo Rápido</span>
+                    <p class="text-sm font-semibold text-navy-900 mt-1 mb-3">
+                        Se fabrican 2.000 unidades y se venden 1.500. Costo variable unitario $100. CIF fijos totales $400.000. No hay inventario inicial. ¿Cuál es la diferencia entre la utilidad absorbente y la variable?
+                    </p>
+                    <div class="space-y-2 text-xs">
+                        <button onclick="checkMC(2, 'A', false)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition opt">A) Absorbente gana por $400.000</button>
+                        <button onclick="checkMC(2, 'B', true)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition opt">B) Absorbente gana por $100.000 (500 unid. × $200 CIFf unitario)</button>
+                        <button onclick="checkMC(2, 'C', false)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition opt">C) Variable gana por $100.000</button>
+                        <button onclick="checkMC(2, 'D', false)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition opt">D) Las utilidades son iguales porque el costo variable es el mismo</button>
+                    </div>
+                    <div class="feedback hidden mt-3 p-3 rounded text-xs bg-slate-50"></div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm" id="mc-3">
+                    <span class="text-[11px] font-bold text-crimson-600 uppercase">Pregunta 3 · Métodos de Valorización</span>
+                    <p class="text-sm font-semibold text-navy-900 mt-1 mb-3">
+                        En un contexto donde los costos unitarios de fabricación aumentan mes a mes por inflación, ¿qué método genera un mayor costo de ventas y por ende menor utilidad en el mes actual?
+                    </p>
+                    <div class="space-y-2 text-xs">
+                        <button onclick="checkMC(3, 'A', true)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition opt">A) PMP, porque absorbe parte del nuevo costo alto antes que FIFO</button>
+                        <button onclick="checkMC(3, 'B', false)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition opt">B) FIFO, porque vende primero el costo más nuevo</button>
+                        <button onclick="checkMC(3, 'C', false)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition opt">C) Ambos métodos entregan exactamente el mismo resultado</button>
+                        <button onclick="checkMC(3, 'D', false)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition opt">D) Depende de las horas extras trabajadas</button>
+                    </div>
+                    <div class="feedback hidden mt-3 p-3 rounded text-xs bg-slate-50"></div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm" id="mc-4">
+                    <span class="text-[11px] font-bold text-crimson-600 uppercase">Pregunta 4 · Flujo de Costos</span>
+                    <p class="text-sm font-semibold text-navy-900 mt-1 mb-3">
+                        En el Estado de Costos de Artículos Fabricados y Vendidos, ¿cuál es la ecuación de equilibrio para verificar que no hay error numérico?
+                    </p>
+                    <div class="space-y-2 text-xs">
+                        <button onclick="checkMC(4, 'A', false)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition opt">A) Ventas = Costo de ventas + Margen bruto</button>
+                        <button onclick="checkMC(4, 'B', true)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition opt">B) Disp. para la venta = Costo de los productos vendidos + Inv. Final PT</button>
+                        <button onclick="checkMC(4, 'C', false)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition opt">C) MPD + MOD + CIF = Margen de Contribución</button>
+                        <button onclick="checkMC(4, 'D', false)" class="w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition opt">D) Producción = Ventas - Inventario Inicial</button>
+                    </div>
+                    <div class="feedback hidden mt-3 p-3 rounded text-xs bg-slate-50"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: TABLA DE CLASIFICACIÓN INTERACTIVA -->
+        <section id="clasificacion" class="scroll-mt-custom">
+            <div class="border-b-2 border-crimson-600 pb-3 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-bold text-navy-800 uppercase tracking-widest">Simulador en Vivo · Caso "Endulzando Momentos S.A."</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900">4. Taller Práctico de Clasificación de Costos</h2>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button onclick="resetClasificacion()" class="px-3 py-1.5 text-xs font-semibold bg-slate-200 text-slate-700 hover:bg-slate-300 rounded-lg transition">
+                        <i class="fa-solid fa-rotate-left"></i> Limpiar
+                    </button>
+                    <button onclick="validarClasificacion()" class="px-4 py-1.5 text-xs font-bold bg-navy-800 hover:bg-navy-900 text-white rounded-lg shadow transition">
+                        <i class="fa-solid fa-check-double"></i> Validar Respuestas
+                    </button>
+                </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-600 mb-4">
+                Instrucciones: Clasifica cada ítem según su <strong>Comportamiento</strong> (Fijo o Variable), su <strong>Asignación</strong> (Directo o Indirecto) y su <strong>Función</strong> (Producción o No Producción). Presiona 'Validar Respuestas' para obtener corrección inmediata.
+            </p>
+
+            <div class="overflow-x-auto bg-white rounded-xl shadow border border-slate-200">
+                <table class="w-full text-left border-collapse text-xs">
+                    <thead>
+                        <tr class="bg-navy-900 text-white uppercase text-[11px] tracking-wider">
+                            <th class="p-3">Concepto del Desembolso</th>
+                            <th class="p-3 text-right">Monto ($)</th>
+                            <th class="p-3 text-center">Comportamiento</th>
+                            <th class="p-3 text-center">Identificación</th>
+                            <th class="p-3 text-center">Función Orgánica</th>
+                            <th class="p-3 text-center">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100" id="tabla-clasificacion-body">
+                        <!-- Generado por JavaScript con los datos de Endulzando Momentos S.A. -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="resultado-clasificacion-box" class="hidden mt-4 p-4 rounded-xl border"></div>
+        </section>
+
+        <!-- SECCIÓN 5: GUÍA METODOLÓGICA PASO A PASO -->
+        <section id="metodologia" class="scroll-mt-custom">
+            <div class="border-b-2 border-navy-800 pb-3 mb-8 flex items-center justify-between">
+                <div>
+                    <span class="text-xs font-bold text-crimson-600 uppercase tracking-widest">Algoritmo de Solución del Contador</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900">5. Guía Metodológica: ¿Cómo Resolver Cualquier Ejercicio?</h2>
+                </div>
+                <span class="text-navy-800 text-2xl"><i class="fa-solid fa-route"></i></span>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Paso 1 -->
+                <div class="bg-white rounded-xl p-5 border-l-4 border-l-navy-800 shadow-sm flex gap-4">
+                    <div class="w-10 h-10 rounded-full bg-navy-800 text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">P1</div>
+                    <div class="space-y-1">
+                        <h3 class="text-sm font-bold text-navy-900">Cuadrar el Flujo Físico de Unidades (Ecuación de Conservación)</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Aplica sin excepción: <code class="bg-slate-100 px-1 py-0.5 rounded text-navy-900 font-bold">Inventario Inicial + Producción = Ventas + Inventario Final</code>. Despeja la incógnita antes de calcular ningún signo de pesos. Si no cuadran las unidades, los costos jamás cerrarán.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="bg-white rounded-xl p-5 border-l-4 border-l-crimson-600 shadow-sm flex gap-4">
+                    <div class="w-10 h-10 rounded-full bg-crimson-600 text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">P2</div>
+                    <div class="space-y-1">
+                        <h3 class="text-sm font-bold text-navy-900">Clasificar Partidas y Prorratear CIF Comunes</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Separa la fábrica de las áreas comerciales y de administración. Identifica MPD, MOD y calcula el pozo total de CIF. Si hay varias líneas de productos (como en <em>El Sofá Majestuoso</em> o <em>Endulzando Momentos</em>), aplica la tasa de distribución establecida (ej: prorrateo por consumo de MPD o por unidades producidas).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="bg-white rounded-xl p-5 border-l-4 border-l-navy-800 shadow-sm flex gap-4">
+                    <div class="w-10 h-10 rounded-full bg-navy-800 text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">P3</div>
+                    <div class="space-y-1">
+                        <h3 class="text-sm font-bold text-navy-900">Determinar los Costos Unitarios de Fabricación</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            <strong>Costeo Variable:</strong> <code class="bg-slate-100 px-1 py-0.5 rounded">Cuv = MPDu + MODu + CIFvu</code>.<br>
+                            <strong>Costeo Absorbente:</strong> <code class="bg-slate-100 px-1 py-0.5 rounded">Cu_abs = Cuv + (CIF Fijos Totales ÷ Unidades Producidas)</code>.<br>
+                            <span class="text-crimson-600 font-semibold text-[11px]">* REGLA DE ORO: Siempre se divide por las unidades PRODUCIDAS del lote, NUNCA por las vendidas.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="bg-white rounded-xl p-5 border-l-4 border-l-crimson-600 shadow-sm flex gap-4">
+                    <div class="w-10 h-10 rounded-full bg-crimson-600 text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">P4</div>
+                    <div class="space-y-1">
+                        <h3 class="text-sm font-bold text-navy-900">Valorizar Salidas (Costo de Ventas) y Saldo (Inventario Final PT)</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            <strong>FIFO (PEPS):</strong> Las ventas consumen primero el 100% del inventario inicial (con su costo unitario del período previo); el remanente se toma de la producción del mes. El inventario final queda valorizado al costo unitario más reciente.<br>
+                            <strong>PMP:</strong> <code class="bg-slate-100 px-1 py-0.5 rounded">Costo Promedio = ($ Valor Total Disponible ÷ Unidades Totales Disponibles)</code>. Multiplica este costo unitario promedio tanto por las unidades vendidas como por las unidades finales.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Paso 5 -->
+                <div class="bg-white rounded-xl p-5 border-l-4 border-l-navy-800 shadow-sm flex gap-4">
+                    <div class="w-10 h-10 rounded-full bg-navy-800 text-white font-bold flex items-center justify-center flex-shrink-0 text-sm">P5</div>
+                    <div class="space-y-1">
+                        <h3 class="text-sm font-bold text-navy-900">Estructurar Estados de Resultados y Conciliar la Utilidad</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Arma el Estado Absorbente (Ventas − Costo de Ventas Absorbente = Margen Bruto − GAV = Utilidad Absorbente) y el Estado Variable (Ventas − Costos Variables = Margen de Contribución − Fijos Totales = Utilidad Variable).<br>
+                            <strong>Prueba del Algodón (Conciliación):</strong> <code class="bg-slate-100 px-1 py-0.5 rounded font-bold text-crimson-600">Utilidad Absorbente − Utilidad Variable = CIF Fijo en IF − CIF Fijo en II</code>. Si no coincide al centavo, revisa el paso 4.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6 Y 7: BANCO DE EJERCICIOS Y SOLUCIONARIO DETALLADO -->
+        <section id="ejercicios" class="scroll-mt-custom">
+            <div class="border-b-2 border-crimson-600 pb-3 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-bold text-navy-800 uppercase tracking-widest">Ejercicios Oficiales de Ayudantías y Cátedra</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900">6. Banco de Ejercicios & Solucionario Maestro</h2>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button onclick="toggleAllSolutions(true)" class="px-3 py-1.5 text-xs font-semibold bg-navy-800 text-white rounded-lg hover:bg-navy-900 transition">
+                        <i class="fa-solid fa-eye"></i> Desplegar Todas
+                    </button>
+                    <button onclick="toggleAllSolutions(false)" class="px-3 py-1.5 text-xs font-semibold bg-slate-200 text-slate-700 rounded-lg hover:bg-slate-300 transition">
+                        <i class="fa-solid fa-eye-slash"></i> Ocultar Todas
+                    </button>
+                </div>
+            </div>
+
+            <div class="space-y-8" id="solucionario">
+
+                <!-- ================= EJERCICIO 1: JAULITAS LTDA. ================= -->
+                <article class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden" id="ej-1">
+                    <div class="bg-gradient-to-r from-navy-900 to-navy-800 p-5 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                                Ayudantía 2 · Ejercicio Completo
+                            </span>
+                            <h3 class="text-lg font-bold mt-1 text-white">Ejercicio 1: Jaulitas Ltda. (Corte, Soldadura y Cámaras con UF)</h3>
+                        </div>
+                        <button onclick="toggleSol(1)" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-lg transition flex items-center gap-1 self-start sm:self-auto">
+                            <span id="btn-text-1">Ver Solución Detallada</span> <i class="fa-solid fa-chevron-down text-[10px]" id="arrow-1"></i>
+                        </button>
+                    </div>
+                    <div class="p-6 text-xs text-slate-700 space-y-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-navy-900 mb-2 text-sm">Enunciado & Antecedentes del Mes de Septiembre:</h4>
+                            <p class="mb-2">La empresa Jaulitas Ltda. fabrica jaulas para aves (corte, doblado, soldadura y pintura). Información del mes:</p>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-[11px] mb-3">
+                                <div class="bg-white p-2 rounded border">Q Producidas: <strong>13.000</strong></div>
+                                <div class="bg-white p-2 rounded border">Q Vendidas: <strong>11.000</strong></div>
+                                <div class="bg-white p-2 rounded border">Precio Venta: <strong>$15.000</strong></div>
+                                <div class="bg-white p-2 rounded border">Valor UF: <strong>$39.486</strong></div>
+                            </div>
+                            <ul class="list-disc list-inside space-y-1 text-slate-600">
+                                <li>Varillas de aluminio: $2.500.000 | Pinturas: $4.500.000 | Materiales para soldar: $250.000</li>
+                                <li>Bono por unidad soldada: $2.000 por jaula producida | Sueldo operarios fábrica: $10.000.000</li>
+                                <li>Depreciación herramientas: $17.663 | Personal de mantención fábrica: $450.000</li>
+                                <li>Salarios personal administración: $5.000.000 | Comisión mantención cta cte: $16.335 | Comisión vendedores: 3% de la venta</li>
+                                <li>Energía eléctrica total: $450.000. Arriendo total: 1 UF por m2.</li>
+                                <li><strong>Distribución física:</strong> Superficie total 200 m2 (150 m2 fábrica [75%], 50 m2 administración [25%]). La energía y arriendo se distribuyen según m2.</li>
+                                <li><strong>Cámaras de seguridad:</strong> Adquiridas para custodiar materiales e inventario. Valor bruto: $119.000 c/u (Neto = $119.000 / 1.19 = $100.000). Cada cámara cubre 10 m2 (Total = 200 m2 / 10 = 20 cámaras). Depreciación mensual en 12 meses. Se distribuye 75% fábrica y 25% administración.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Solución desplegable -->
+                        <div id="sol-1" class="hidden space-y-4 pt-2">
+                            <div class="bg-blue-50/70 p-4 rounded-xl border border-blue-200">
+                                <h5 class="font-bold text-navy-900 mb-2 text-xs uppercase tracking-wide">Paso 1: Cálculos Auxiliares y Prorrateos</h5>
+                                <div class="space-y-1.5 font-mono text-[11px] text-slate-700">
+                                    <p>• <strong>Arriendo Fábrica (75%):</strong> 150 m2 × 1 UF × $39.486 = <strong>$5.922.900</strong> | Adm (25%): 50 m2 = <strong>$1.974.300</strong></p>
+                                    <p>• <strong>Energía Eléctrica:</strong> Fábrica (75% × $450.000) = <strong>$337.500</strong> | Adm (25%) = <strong>$112.500</strong></p>
+                                    <p>• <strong>Cámaras (Activo Fijo Neto):</strong> 20 cámaras × $100.000 = $2.000.000 neto. Deprec. mensual total = $2.000.000 / 12 = $166.667. <br>
+                                    &nbsp;&nbsp;&rarr; Fábrica (75%): <strong>$125.000</strong> | Administración (25%): <strong>$41.667</strong></p>
+                                    <p>• <strong>Bono operarios (Variable MOD):</strong> 13.000 jaulas × $2.000 = <strong>$26.000.000</strong></p>
+                                    <p>• <strong>Comisión Ventas:</strong> 11.000 unid × $15.000 × 3% = <strong>$4.950.000</strong></p>
+                                </div>
+                            </div>
+
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-[11px] border border-slate-200 bg-white">
+                                    <thead class="bg-navy-800 text-white">
+                                        <tr>
+                                            <th class="p-2 text-left">Elemento de Costo de Producción (13.000 unid)</th>
+                                            <th class="p-2 text-center">Tipo</th>
+                                            <th class="p-2 text-right">Total ($)</th>
+                                            <th class="p-2 text-right">Unitario ($)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-100">
+                                        <tr><td class="p-2">MPD (Varillas $2.500.000 + Pinturas $4.500.000 + Soldar $250.000)</td><td class="p-2 text-center">Variable</td><td class="p-2 text-right font-mono">$7.250.000</td><td class="p-2 text-right font-mono">$557,69</td></tr>
+                                        <tr><td class="p-2">MOD Variable (Bono $2.000 × 13.000 unid)</td><td class="p-2 text-center">Variable</td><td class="p-2 text-right font-mono">$26.000.000</td><td class="p-2 text-right font-mono">$2.000,00</td></tr>
+                                        <tr><td class="p-2">MOD Fija (Sueldo base operarios fábrica)</td><td class="p-2 text-center">Fijo</td><td class="p-2 text-right font-mono">$10.000.000</td><td class="p-2 text-right font-mono">$769,23</td></tr>
+                                        <tr><td class="p-2">CIF Variable</td><td class="p-2 text-center">Variable</td><td class="p-2 text-right font-mono">$0</td><td class="p-2 text-right font-mono">$0,00</td></tr>
+                                        <tr><td class="p-2">CIF Fijos (Mantención $450k + Deprec. Htas $17.663 + Deprec. Cám $125k + Arriendo $5.922.900 + Energía $337.500)</td><td class="p-2 text-center">Fijo</td><td class="p-2 text-right font-mono">$6.853.063</td><td class="p-2 text-right font-mono">$527,16</td></tr>
+                                        <tr class="bg-slate-100 font-bold"><td class="p-2">COSTO UNITARIO VARIABLE (MPD + MODv)</td><td class="p-2 text-center">-</td><td class="p-2 text-right font-mono">$33.250.000</td><td class="p-2 text-right font-mono text-crimson-600">$2.557,69</td></tr>
+                                        <tr class="bg-navy-50 font-bold"><td class="p-2">COSTO UNITARIO ABSORBENTE (Variable + Fijos Fab.)</td><td class="p-2 text-center">-</td><td class="p-2 text-right font-mono">$50.103.063</td><td class="p-2 text-right font-mono text-navy-900">$3.854,08</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="p-3 bg-white border border-slate-200 rounded-lg">
+                                    <h6 class="font-bold text-navy-900 border-b pb-1 mb-2">Estado de Resultados Absorbente</h6>
+                                    <div class="space-y-1 font-mono text-[11px]">
+                                        <div class="flex justify-between"><span>Ventas (11.000 × $15.000)</span><span>$165.000.000</span></div>
+                                        <div class="flex justify-between text-crimson-600"><span>(-) Costo Ventas (11.000 × $3.854,08)</span><span>-$42.394.900</span></div>
+                                        <div class="flex justify-between font-bold border-t pt-1"><span>Margen Bruto</span><span>$122.605.100</span></div>
+                                        <div class="flex justify-between text-slate-500"><span>(-) GAV Fijos y Var. (*)</span><span>-$12.094.702</span></div>
+                                        <div class="flex justify-between font-bold text-navy-900 bg-blue-50 p-1 rounded"><span>Resultado Operacional Absorbente</span><span>$110.510.398</span></div>
+                                    </div>
+                                    <p class="text-[10px] text-slate-500 mt-2">* GAV: Sueldo Adm $5M + Arriendo Adm $1.974.300 + Energía Adm $112.500 + Deprec Cám $41.667 + Cta Cte $16.335 + Comisión $4.950.000 = $12.094.702.</p>
+                                </div>
+
+                                <div class="p-3 bg-white border border-slate-200 rounded-lg">
+                                    <h6 class="font-bold text-crimson-600 border-b pb-1 mb-2">Estado de Resultados Variable & Conciliación</h6>
+                                    <div class="space-y-1 font-mono text-[11px]">
+                                        <div class="flex justify-between"><span>Ventas</span><span>$165.000.000</span></div>
+                                        <div class="flex justify-between text-crimson-600"><span>(-) Costo Fab. Variable (11.000 × $2.557,69)</span><span>-$28.134.615</span></div>
+                                        <div class="flex justify-between text-crimson-600"><span>(-) Gasto Variable Comercial (Comisión)</span><span>-$4.950.000</span></div>
+                                        <div class="flex justify-between font-bold border-t pt-1"><span>Margen de Contribución</span><span>$131.915.385</span></div>
+                                        <div class="flex justify-between text-slate-500"><span>(-) Costos Fijos Fabricación (MODf + CIFf)</span><span>-$16.853.063</span></div>
+                                        <div class="flex justify-between text-slate-500"><span>(-) Gastos Fijos de Adm y Ventas</span><span>-$7.144.702</span></div>
+                                        <div class="flex justify-between font-bold text-crimson-600 bg-red-50 p-1 rounded"><span>Resultado Operacional Variable</span><span>$107.917.620</span></div>
+                                    </div>
+                                    <div class="mt-3 p-2 bg-slate-100 rounded text-[10px] font-mono border">
+                                        <strong>Conciliación:</strong><br>
+                                        Inv. Final = 13.000 − 11.000 = 2.000 unid.<br>
+                                        Costo Fijo Fab. Unitario = ($10.000.000 + $6.853.063) / 13.000 = $1.296,39.<br>
+                                        Diferencia = 2.000 × $1.296,39 = <strong>+$2.592.778</strong>.<br>
+                                        $110.510.398 − $107.917.620 = <strong>$2.592.778</strong> (¡Cuadratura Perfecta!).
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= EJERCICIO 2: SMARTSOUND LTDA. ================= -->
+                <article class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden" id="ej-2">
+                    <div class="bg-gradient-to-r from-navy-900 to-navy-800 p-5 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                                Ayudantía 1 · Ejercicio Completo
+                            </span>
+                            <h3 class="text-lg font-bold mt-1 text-white">Ejercicio 2: SmartSound Ltda. (Audífonos, Reproceso 10% y Margen 180%)</h3>
+                        </div>
+                        <button onclick="toggleSol(2)" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-lg transition flex items-center gap-1 self-start sm:self-auto">
+                            <span id="btn-text-2">Ver Solución Detallada</span> <i class="fa-solid fa-chevron-down text-[10px]" id="arrow-2"></i>
+                        </button>
+                    </div>
+                    <div class="p-6 text-xs text-slate-700 space-y-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-navy-900 mb-2 text-sm">Enunciado & Parámetros Operativos:</h4>
+                            <p class="mb-2">Fabricación y comercialización de audífonos inalámbricos. En septiembre se desea vender 500 audífonos con método FIFO. Inventario inicial: 160 audífonos valorizados en $1.376.000 ($8.600 c/u). Se producen 340 unidades (para disponer de 500 para la venta, o según meta planteada).</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-slate-600">
+                                <div>
+                                    <p class="font-bold text-navy-900">Materiales Directos por Audífono:</p>
+                                    <p>1 Diadema ($2.400) + 2 Almohadillas ($1.000) + 4 Tornillos ($240) + 1 Placa ($3.200) + 1 Batería ($1.100) = <strong>$7.940 MPDu</strong>.</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-navy-900">Mano de Obra & Reprocesos:</p>
+                                    <p>Productividad: 3,5 audífonos/hora &rarr; 1/3,5 = 0,2857 hrs/audífono. Tarifa: $21.000/hr.<br>
+                                    Bono terminado: $650/unid.<br>
+                                    Reproceso: 10% de la producción requiere 0,2 hrs adicionales sin materiales nuevos.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Solución desplegable -->
+                        <div id="sol-2" class="hidden space-y-4 pt-2">
+                            <div class="bg-blue-50/70 p-4 rounded-xl border border-blue-200">
+                                <h5 class="font-bold text-navy-900 mb-2 text-xs uppercase tracking-wide">Paso a Paso de Costeo (Para Producción de 500 unidades en planta):</h5>
+                                <div class="space-y-1.5 font-mono text-[11px] text-slate-700">
+                                    <p>• <strong>MOD Normal:</strong> (500 unid ÷ 3,5 unid/hr) × $21.000/hr = 142,86 hrs × $21.000 = $3.000.000 ($6.000/u).</p>
+                                    <p>• <strong>Reproceso (10% = 50 unidades):</strong> 50 unid × 0,2 hrs = 10 horas adicionales. Costo reproceso = 10 hrs × $21.000 = $210.000 ($420/u promedio).</p>
+                                    <p>• <strong>Bono operarios:</strong> 500 unid × $650 = $325.000.</p>
+                                    <p>• <strong>MOD Total:</strong> $3.000.000 + $210.000 + $325.000 = $3.535.000 ($7.070/u).</p>
+                                    <p>• <strong>CIF Fábrica del Mes:</strong>
+                                        <br>- Arriendo fábrica: $820.000
+                                        <br>- Seguros fábrica: $220.000
+                                        <br>- Supervisor planta: $750.000
+                                        <br>- Deprec. máquina ensamblaje: $85.000
+                                        <br>- Energía eléctrica (75% × $180.000): $135.000
+                                        <br>- Seguridad (55% × $2.400.000): $1.320.000
+                                        <br>- Software producción (2 licencias = 2/3 × $180.000): $120.000
+                                        <br>&nbsp;&nbsp;&rarr; <strong>Total CIF Fijo: $3.450.000</strong> (Unitario = $3.450.000 / 500 = $6.900/u).</p>
+                                    <p>• <strong>Costo Unitario Absorbente Actual:</strong> MPDu $7.940 + MODu $7.070 + CIFu $6.900 = <strong>$21.910</strong>.</p>
+                                    <p>• <strong>Precio de Venta:</strong> Recargo 180% sobre costo &rarr; $21.910 × (1 + 1,80) = <strong>$61.348</strong>.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-3 bg-white border border-slate-200 rounded-lg">
+                                <h6 class="font-bold text-navy-900 border-b pb-1 mb-2">Valorización de Inventarios y Costo de Ventas (FIFO):</h6>
+                                <p class="text-xs mb-2">Se venden 500 unidades (160 unidades del lote inicial a $8.600 c/u + 340 unidades del mes a $21.910 c/u):</p>
+                                <div class="font-mono text-[11px] space-y-1">
+                                    <p>• Costo de Ventas (FIFO) = (160 × $8.600) + (340 × $21.910) = $1.376.000 + $7.449.400 = <strong>$8.825.400</strong>.</p>
+                                    <p>• Inventario Final (160 unidades restantes de la producción de septiembre) = 160 × $21.910 = <strong>$3.505.600</strong>.</p>
+                                    <p>• Control Disponible: $1.376.000 + (500 × $21.910 = $10.955.000) = $12.331.000 = $8.825.400 + $3.505.600 (Cuadratura exacta).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= EJERCICIO 3: ANDES OUTDOOR SPA ================= -->
+                <article class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden" id="ej-3">
+                    <div class="bg-gradient-to-r from-navy-900 to-navy-800 p-5 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                                Guía 2 Semanas · Ejercicio 1
+                            </span>
+                            <h3 class="text-lg font-bold mt-1 text-white">Ejercicio 3: Andes Outdoor SpA (El Primer Contraste)</h3>
+                        </div>
+                        <button onclick="toggleSol(3)" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-lg transition flex items-center gap-1 self-start sm:self-auto">
+                            <span id="btn-text-3">Ver Solución Detallada</span> <i class="fa-solid fa-chevron-down text-[10px]" id="arrow-3"></i>
+                        </button>
+                    </div>
+                    <div class="p-6 text-xs text-slate-700 space-y-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-navy-900 mb-2 text-sm">Enunciado:</h4>
+                            <p>Fabrica botellas térmicas. Inicia en septiembre: 1.000 fabricadas, 800 vendidas a $30.000 c/u. Inventario final: 200 botellas. Sin inventario inicial.</p>
+                            <p class="font-mono text-[11px] mt-2">
+                                Acero: $5.000/u | Operarios: $3.000/u | Energía fábrica: $1.000/u | Arriendo fábrica: $4.000.000 mensual | Supervisor: $2.000.000 mensual | Comisión ventas: $1.500/u vendida | Sueldos ventas: $1.800.000 | Arriendo oficinas adm: $1.200.000.
+                            </p>
+                        </div>
+
+                        <div id="sol-3" class="hidden space-y-4 pt-2">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="p-4 bg-slate-50 rounded-xl border">
+                                    <h5 class="font-bold text-navy-900 mb-2">Costos Unitarios:</h5>
+                                    <p class="font-mono text-[11px]">
+                                        • Costo Unitario Variable = MPD $5.000 + MOD $3.000 + CIFv $1.000 = <strong>$9.000</strong>.<br>
+                                        • CIF Fijos Totales = $4.000.000 + $2.000.000 = $6.000.000.<br>
+                                        • CIF Fijo Unitario = $6.000.000 / 1.000 unid = <strong>$6.000</strong>.<br>
+                                        • Costo Unitario Absorbente = $9.000 + $6.000 = <strong>$15.000</strong>.
+                                    </p>
+                                    <h5 class="font-bold text-navy-900 mt-3 mb-1">Inventario Final (200 unid):</h5>
+                                    <p class="font-mono text-[11px]">
+                                        • Variable = 200 × $9.000 = <strong>$1.800.000</strong>.<br>
+                                        • Absorbente = 200 × $15.000 = <strong>$3.000.000</strong>.
+                                    </p>
+                                </div>
+                                <div class="p-4 bg-slate-50 rounded-xl border">
+                                    <h5 class="font-bold text-navy-900 mb-2">Estados de Resultados y Conciliación:</h5>
+                                    <div class="space-y-1 font-mono text-[11px]">
+                                        <p><strong>Absorbente:</strong> Ventas $24.000.000 − CV (800 × $15.000 = $12.000.000) = MB $12.000.000 − GAV ($1.200.000 comisiones + $3.000.000 fijos = $4.200.000) = <strong>$7.800.000</strong>.</p>
+                                        <p><strong>Variable:</strong> Ventas $24.000.000 − Costos Var. ($7.200.000 fab + $1.200.000 com) = MC $15.600.000 − Fijos Totales ($6.000.000 CIFf + $3.000.000 GAVf = $9.000.000) = <strong>$6.600.000</strong>.</p>
+                                        <p class="text-crimson-600 font-bold mt-2">Diferencia: $7.800.000 − $6.600.000 = $1.200.000.<br>
+                                        Explicación: 200 unid en bodega × $6.000 CIFf retenido = $1.200.000.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= EJERCICIO 4: CUMBRE MOBILITY ================= -->
+                <article class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden" id="ej-4">
+                    <div class="bg-gradient-to-r from-navy-900 to-navy-800 p-5 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                                Guía 2 Semanas · Ejercicio 2
+                            </span>
+                            <h3 class="text-lg font-bold mt-1 text-white">Ejercicio 4: Cumbre Mobility (Reconstrucción Inversa)</h3>
+                        </div>
+                        <button onclick="toggleSol(4)" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-lg transition flex items-center gap-1 self-start sm:self-auto">
+                            <span id="btn-text-4">Ver Solución Detallada</span> <i class="fa-solid fa-chevron-down text-[10px]" id="arrow-4"></i>
+                        </button>
+                    </div>
+                    <div class="p-6 text-xs text-slate-700 space-y-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-navy-900 mb-2 text-sm">Enunciado:</h4>
+                            <p>Producción: 5.000 unid; Ventas: 4.500 unid a $1.000 c/u. Inventario final: 500 unid. Estado absorbente entregado:</p>
+                            <p class="font-mono text-[11px] mt-1">
+                                Ventas $4.500.000 | Costo de ventas (4.500 u): MPD $900.000 + MOD $1.800.000 + CIFv $540.000 + CIFf $180.000 = $3.420.000 | Margen Bruto: $1.080.000 | Comisiones: $45.000 | Arriendo sala: $100.000 | Sueldos base: $200.000 | Utilidad: $735.000.
+                            </p>
+                        </div>
+
+                        <div id="sol-4" class="hidden space-y-4 pt-2 font-mono text-[11px]">
+                            <div class="bg-slate-50 p-4 rounded-xl border">
+                                <p>• <strong>Costos unitarios deducidos (sobre 4.500 vendidas):</strong>
+                                    <br>MPDu = $900.000 / 4.500 = $200
+                                    <br>MODu = $1.800.000 / 4.500 = $400
+                                    <br>CIFvu = $540.000 / 4.500 = $120
+                                    <br>&rarr; <strong>Costo Unitario Variable = $720</strong>.
+                                    <br>CIFfu = $180.000 / 4.500 = $40 &rarr; <strong>Costo Unitario Absorbente = $760</strong>.
+                                </p>
+                                <p class="mt-2">• <strong>CIF Fijo Total del Mes:</strong> Se produjeron 5.000 unidades &rarr; 5.000 × $40 = <strong>$200.000</strong> (en el absorbente solo se restaron $180.000 al costo de venta; los otros $20.000 quedaron en el IF).</p>
+                                <p class="mt-2">• <strong>Estado de Resultados Variable:</strong>
+                                    <br>Ventas: $4.500.000
+                                    <br>(-) Costos Var Fab Vendidos (4.500 × $720): -$3.240.000
+                                    <br>(-) Gasto Var Venta (Comisión): -$45.000
+                                    <br>(=) Margen de Contribución: $1.215.000
+                                    <br>(-) CIF Fijos Totales: -$200.000
+                                    <br>(-) Gastos Fijos Venta ($100k + $200k): -$300.000
+                                    <br>(=) <strong>Resultado Operacional Variable = $715.000</strong>.
+                                </p>
+                                <p class="mt-2 text-crimson-600 font-bold">Conciliación: $735.000 (Abs) − $715.000 (Var) = $20.000 = 500 unid en IF × $40 CIFf unitario.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= EJERCICIO 5: DESARROLLO S.A. ================= -->
+                <article class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden" id="ej-5">
+                    <div class="bg-gradient-to-r from-navy-900 to-navy-800 p-5 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                                Guía 2 Semanas · Ejercicio 3
+                            </span>
+                            <h3 class="text-lg font-bold mt-1 text-white">Ejercicio 5: Desarrollo S.A. (Dos Meses, Capas FIFO e Inversión de Efecto)</h3>
+                        </div>
+                        <button onclick="toggleSol(5)" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-lg transition flex items-center gap-1 self-start sm:self-auto">
+                            <span id="btn-text-5">Ver Solución Detallada</span> <i class="fa-solid fa-chevron-down text-[10px]" id="arrow-5"></i>
+                        </button>
+                    </div>
+                    <div class="p-6 text-xs text-slate-700 space-y-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-navy-900 mb-2 text-sm">Enunciado:</h4>
+                            <p>Precio venta $250. Costo variable fab: MPD $40, MOD $30, CIFv $20 (Total Cuv = $90). CIF fijos = $30.000/mes. Gastos var venta = $10/u vendida. Gastos fijos adm = $6.000/mes. Método FIFO.</p>
+                            <p class="font-mono text-[11px] mt-1">
+                                Enero: Inv. Inicial 0 | Producción 600 | Ventas 450 | Inv. Final 150.<br>
+                                Febrero: Inv. Inicial 150 | Producción 500 | Ventas 600 | Inv. Final 50.
+                            </p>
+                        </div>
+
+                        <div id="sol-5" class="hidden space-y-4 pt-2 font-mono text-[11px]">
+                            <div class="overflow-x-auto">
+                                <table class="w-full border text-left bg-white">
+                                    <thead class="bg-navy-800 text-white">
+                                        <tr>
+                                            <th class="p-2">Concepto</th>
+                                            <th class="p-2 text-right">Enero Variable</th>
+                                            <th class="p-2 text-right">Enero Absorbente</th>
+                                            <th class="p-2 text-right">Febrero Variable</th>
+                                            <th class="p-2 text-right">Febrero Absorbente</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-100">
+                                        <tr><td class="p-2">Costo Unitario Fabricación</td><td class="p-2 text-right">$90</td><td class="p-2 text-right">$140 ($90+$30k/600)</td><td class="p-2 text-right">$90</td><td class="p-2 text-right">$150 ($90+$30k/500)</td></tr>
+                                        <tr><td class="p-2">Ventas ($250 × Qv)</td><td class="p-2 text-right">$112.500</td><td class="p-2 text-right">$112.500</td><td class="p-2 text-right">$150.000</td><td class="p-2 text-right">$150.000</td></tr>
+                                        <tr><td class="p-2">Costo de Ventas (FIFO)</td><td class="p-2 text-right">-$40.500</td><td class="p-2 text-right">-$63.000 (450×$140)</td><td class="p-2 text-right">-$54.000</td><td class="p-2 text-right">-$88.500 (150×$140 + 450×$150)</td></tr>
+                                        <tr class="font-bold bg-slate-50"><td class="p-2">Margen Bruto / Margen Contribución</td><td class="p-2 text-right">$67.500 (MC fab-var)</td><td class="p-2 text-right">$49.500 (MB)</td><td class="p-2 text-right">$90.000 (MC fab-var)</td><td class="p-2 text-right">$61.500 (MB)</td></tr>
+                                        <tr><td class="p-2">Gastos Var Venta ($10 × Qv)</td><td class="p-2 text-right">-$4.500</td><td class="p-2 text-right">-$4.500</td><td class="p-2 text-right">-$6.000</td><td class="p-2 text-right">-$6.000</td></tr>
+                                        <tr><td class="p-2">Costos / Gastos Fijos</td><td class="p-2 text-right">-$36.000 ($30k CIF + $6k)</td><td class="p-2 text-right">-$6.000 (GAV fijos)</td><td class="p-2 text-right">-$36.000</td><td class="p-2 text-right">-$6.000</td></tr>
+                                        <tr class="font-bold bg-navy-50 text-navy-900"><td class="p-2">RESULTADO OPERACIONAL</td><td class="p-2 text-right">$31.500</td><td class="p-2 text-right text-rose-600">$39.000</td><td class="p-2 text-right">$54.000</td><td class="p-2 text-right text-rose-600">$49.500</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="p-3 bg-slate-50 border rounded text-slate-700">
+                                <p><strong>Análisis de Conciliación:</strong></p>
+                                <p>• <strong>Enero:</strong> Absorbente ($39.000) &gt; Variable ($31.500) en <strong>+$7.500</strong>. Motivo: Se inventariaron 150 unidades con $50 de CIFf ($30.000/600) = $7.500 diferidos al activo.</p>
+                                <p>• <strong>Febrero:</strong> Absorbente ($49.500) &lt; Variable ($54.000) en <strong>-$4.500</strong>. Motivo: Salieron de bodega las 150 unidades de enero (se liberaron -$7.500 de CIFf) y solo quedaron 50 unidades de febrero (50 × $60 = +$3.000 retenidos). Diferencia neta = +$3.000 − $7.500 = <strong>-$4.500</strong>.</p>
+                                <p>• <strong>Acumulado:</strong> Absorbente ($88.500) &gt; Variable ($85.500) en <strong>+$3.000</strong> (= 50 unidades finales en bodega × $60).</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= EJERCICIO 6: PLASTIM ================= -->
+                <article class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden" id="ej-6">
+                    <div class="bg-gradient-to-r from-navy-900 to-navy-800 p-5 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                                Guía 2 Semanas · Ejercicio 4
+                            </span>
+                            <h3 class="text-lg font-bold mt-1 text-white">Ejercicio 6: Plastim (Valorización PMP y Costos Cambiantes)</h3>
+                        </div>
+                        <button onclick="toggleSol(6)" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-lg transition flex items-center gap-1 self-start sm:self-auto">
+                            <span id="btn-text-6">Ver Solución Detallada</span> <i class="fa-solid fa-chevron-down text-[10px]" id="arrow-6"></i>
+                        </button>
+                    </div>
+                    <div class="p-6 text-xs text-slate-700 space-y-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-navy-900 mb-2 text-sm">Enunciado:</h4>
+                            <p>Precio venta $990. CIF fijos = $1.600.000/mes. Gastos fijos venta = $350.000/mes. En septiembre usa Promedio Móvil Ponderado (PMP).</p>
+                            <p class="font-mono text-[11px] mt-1">
+                                Agosto: Producción 10.000 | Ventas 8.000 | Inv. Final 2.000. MPD $300, MOD $220, CIFv $170 (Cuv = $690). Gasto var venta $26.<br>
+                                Septiembre: Producción 8.000 | Ventas 5.600 | Inv. Final 4.400. MPD $320, MOD $280, CIFv $240 (Cuv = $840). Gasto var venta $22.
+                            </p>
+                        </div>
+
+                        <div id="sol-6" class="hidden space-y-4 pt-2 font-mono text-[11px]">
+                            <div class="bg-slate-50 p-4 rounded-xl border">
+                                <p>• <strong>Agosto:</strong>
+                                    <br>Cuv = $690 | CIFfu = $1.600.000 / 10.000 = $160 | Cu_abs = $850.
+                                    <br>IF Absorbente (2.000 × $850) = $1.700.000 | IF Variable (2.000 × $690) = $1.380.000.
+                                    <br>Utilidad Absorbente = $562.000 | Utilidad Variable = $242.000 (Diferencia = 2.000 × $160 = +$320.000).
+                                </p>
+                                <p class="mt-2">• <strong>Septiembre (Cálculo PMP de unidades disponibles = 2.000 iniciales + 8.000 producidas = 10.000 unid):</strong>
+                                    <br>- <strong>Costo Unitario Variable PMP:</strong> [(2.000 × $690) + (8.000 × $840)] / 10.000 = ($1.380.000 + $6.720.000) / 10.000 = <strong>$810</strong>.
+                                    <br>- <strong>Costo Unitario Absorbente PMP:</strong> Costo producción actual septiembre = $840 + ($1.600.000 / 8.000 = $200) = $1.040. <br>
+                                    Total disponible = (2.000 × $850) + (8.000 × $1.040) = $1.700.000 + $8.320.000 = $10.020.000. <br>
+                                    Cu_abs PMP = $10.020.000 / 10.000 = <strong>$1.002</strong>.
+                                </p>
+                                <p class="mt-2">• <strong>Resultados Septiembre:</strong>
+                                    <br>Costo Ventas PMP Absorbente = 5.600 × $1.002 = $5.611.200 | IF Absorbente = 4.400 × $1.002 = $4.408.800.
+                                    <br>Utilidad Absorbente = -$540.400 (Pérdida).
+                                    <br>Utilidad Variable = -$1.065.200 (Pérdida mayor).
+                                    <br><span class="text-crimson-600 font-bold">Diferencia = $524.800. Conciliación: CIFf en IF (4.400 × ($1.002 − $810 = $192) = $844.800) − CIFf en II ($320.000) = +$524.800.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= EJERCICIO 7: DESTILERÍA CORDILLERA ================= -->
+                <article class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden" id="ej-7">
+                    <div class="bg-gradient-to-r from-navy-900 to-navy-800 p-5 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                                Guía 2 Semanas · Ejercicio 5
+                            </span>
+                            <h3 class="text-lg font-bold mt-1 text-white">Ejercicio 7: Destilería Cordillera (Cifras Totales, Aumento de Precio y Capas FIFO)</h3>
+                        </div>
+                        <button onclick="toggleSol(7)" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-lg transition flex items-center gap-1 self-start sm:self-auto">
+                            <span id="btn-text-7">Ver Solución Detallada</span> <i class="fa-solid fa-chevron-down text-[10px]" id="arrow-7"></i>
+                        </button>
+                    </div>
+                    <div class="p-6 text-xs text-slate-700 space-y-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-navy-900 mb-2 text-sm">Enunciado:</h4>
+                            <p>Precio febrero $3.750, marzo sube 10% ($4.125). FIFO.</p>
+                            <p class="font-mono text-[11px] mt-1">
+                                Febrero: Prod 2.500 | Ventas 2.250 | IF 250. MPD $1.250.000 | MOD $1.750.000 | CIFv $250.000 | CIFf $750.000 | Comis $120/u | GAVf $900.000.<br>
+                                Marzo: Prod 4.000 | Ventas 1.750 | IF 2.500. MPD $2.200.000 | MOD $2.000.000 | CIFv $440.000 | CIFf $800.000 | Comis $150/u | GAVf $1.125.000.
+                            </p>
+                        </div>
+
+                        <div id="sol-7" class="hidden space-y-4 pt-2 font-mono text-[11px]">
+                            <div class="bg-slate-50 p-4 rounded-xl border">
+                                <p>• <strong>Febrero:</strong>
+                                    <br>Cuv = ($1.250.000 + $1.750.000 + $250.000) / 2.500 = $1.300.
+                                    <br>CIFfu = $750.000 / 2.500 = $300 &rarr; Cu_abs = $1.600.
+                                    <br>Utilidad Absorbente = $3.667.500 | Utilidad Variable = $3.592.500. Diferencia = 250 × $300 = +$75.000.
+                                </p>
+                                <p class="mt-2">• <strong>Marzo (Capas FIFO para 1.750 vendidas: 250 de feb + 1.500 de mar):</strong>
+                                    <br>Cuv marzo = ($2.200.000 + $2.000.000 + $440.000) / 4.000 = $1.160.
+                                    <br>CIFfu marzo = $800.000 / 4.000 = $200 &rarr; Cu_abs marzo = $1.360.
+                                    <br>Costo Ventas Abs = (250 × $1.600) + (1.500 × $1.360) = $400.000 + $2.040.000 = $2.440.000.
+                                    <br>IF Absorbente (2.500 restantes de marzo) = 2.500 × $1.360 = $3.400.000.
+                                    <br>Utilidad Absorbente Marzo = $3.391.250.
+                                    <br>Utilidad Variable Marzo = $2.966.250.
+                                    <br><span class="text-crimson-600 font-bold">Diferencia Marzo: $3.391.250 − $2.966.250 = +$425.000. Conciliación: CIFf en IF (2.500 × $200 = $500.000) − CIFf en II ($75.000) = +$425.000.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= EJERCICIO 8: HORIZONTE INDUSTRIAL ================= -->
+                <article class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden" id="ej-8">
+                    <div class="bg-gradient-to-r from-navy-900 to-navy-800 p-5 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                                Guía 2 Semanas · Ejercicio 6
+                            </span>
+                            <h3 class="text-lg font-bold mt-1 text-white">Ejercicio 8: Horizonte Industrial (Dos Años y Análisis Gerencial)</h3>
+                        </div>
+                        <button onclick="toggleSol(8)" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-lg transition flex items-center gap-1 self-start sm:self-auto">
+                            <span id="btn-text-8">Ver Solución Detallada</span> <i class="fa-solid fa-chevron-down text-[10px]" id="arrow-8"></i>
+                        </button>
+                    </div>
+                    <div class="p-6 text-xs text-slate-700 space-y-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-navy-900 mb-2 text-sm">Enunciado:</h4>
+                            <p>Método FIFO. 2018: P = $7.200; MPDu $800; MODu $1.100; CIFvu $200; Gv $100; CIFf $1.200.000; GAVf $2.000.000; Prod 10.000; Ventas 8.000; IF 2.000.</p>
+                            <p class="mt-1">2019: P = $7.500; MPDu $900; MODu $1.200; CIFvu $200; Gv $120; CIFf $1.250.000; GAVf $2.200.000; Prod 10.000; Ventas 11.000; IF 1.000.</p>
+                        </div>
+
+                        <div id="sol-8" class="hidden space-y-4 pt-2 font-mono text-[11px]">
+                            <div class="bg-slate-50 p-4 rounded-xl border">
+                                <p>• <strong>Año 2018:</strong>
+                                    <br>Cuv = $2.100 | CIFfu = $1.200.000 / 10.000 = $120 &rarr; Cu_abs = $2.220.
+                                    <br>Utilidad Absorbente = $37.040.000 | Utilidad Variable = $36.800.000.
+                                    <br>Diferencia = 2.000 unid en IF × $120 = <strong>+$240.000</strong>.
+                                </p>
+                                <p class="mt-2">• <strong>Año 2019:</strong>
+                                    <br>Cuv = $2.300 | CIFfu = $1.250.000 / 10.000 = $125 &rarr; Cu_abs = $2.425.
+                                    <br>Se venden 11.000 unid (2.000 de 2018 + 9.000 de 2019). Quedan 1.000 de 2019.
+                                    <br>Utilidad Absorbente = $52.715.000 | Utilidad Variable = $52.830.000.
+                                    <br><span class="text-crimson-600 font-bold">Diferencia 2019: $52.715.000 − $52.830.000 = -$115.000. Conciliación: CIFf en IF (1.000 × $125 = $125.000) − CIFf en II ($240.000) = -$115.000.</span>
+                                </p>
+                                <p class="mt-2 text-navy-900 font-semibold">Lección Gerencial: Producir por sobre la demanda maquilla la utilidad absorbente transitoriamente, pero cuando el sobrestock debe liquidarse al año siguiente, el costo fijo retenido golpea con fuerza a los resultados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= EJERCICIO 9: EL SOFÁ MAJESTUOSO S.A. ================= -->
+                <article class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden" id="ej-9">
+                    <div class="bg-gradient-to-r from-navy-900 to-navy-800 p-5 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                                Guía Explicativa Oficial · Ejercicio Maestro
+                            </span>
+                            <h3 class="text-lg font-bold mt-1 text-white">Ejercicio 9: El Sofá Majestuoso S.A. (Cuero vs Ratán, Prorrateo MPD, FIFO y PMP)</h3>
+                        </div>
+                        <button onclick="toggleSol(9)" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-lg transition flex items-center gap-1 self-start sm:self-auto">
+                            <span id="btn-text-9">Ver Solución Detallada</span> <i class="fa-solid fa-chevron-down text-[10px]" id="arrow-9"></i>
+                        </button>
+                    </div>
+                    <div class="p-6 text-xs text-slate-700 space-y-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-navy-900 mb-2 text-sm">Enunciado & Claves del Negocio:</h4>
+                            <p>Producción del mes: 1.000 Sillones de Cuero y 1.000 de Ratán. CIF común: $100.000.000 (Supervisor $30M + Deprec $40M + Energía $20M + Seguros $10M). Se prorratea según MPD.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 font-mono text-[11px] mt-2">
+                                <p>• <strong>Cuero:</strong> MPD $300M | MOD $110M | Precio $990k | Ventas 800 | Inv. Inicial 100 unid (15% más barato que el actual).</p>
+                                <p>• <strong>Ratán:</strong> MPD $140M | MOD $75M | Precio $750k | Ventas 900 | Inv. Inicial 200 unid (20% más caro que el actual).</p>
+                            </div>
+                        </div>
+
+                        <div id="sol-9" class="hidden space-y-4 pt-2 font-mono text-[11px]">
+                            <div class="bg-blue-50/70 p-4 rounded-xl border border-blue-200">
+                                <h5 class="font-bold text-navy-900 mb-1">1. Prorrateo CIF y Costos Actuales:</h5>
+                                <p>• Base MPD Total = $300.000.000 + $140.000.000 = $440.000.000.</p>
+                                <p>• Cuero (68,1818%) &rarr; CIF = $68.181.818 | Costo Fab = $300M + $110M + $68.181.818 = $478.181.818 &rarr; <strong>Cu actual = $478.182</strong>.</p>
+                                <p>• Ratán (31,8182%) &rarr; CIF = $31.818.182 | Costo Fab = $140M + $75M + $31.818.182 = $246.818.182 &rarr; <strong>Cu actual = $246.818</strong>.</p>
+                                <p class="mt-2 font-semibold">• Inventarios Iniciales Reconstruidos:</p>
+                                <p>Cuero: 100 unid × ($478.182 × 0,85) = 100 × $406.455 = $40.645.455.</p>
+                                <p>Ratán: 200 unid × ($246.818 × 1,20) = 200 × $296.182 = $59.236.364.</p>
+                            </div>
+
+                            <div class="overflow-x-auto">
+                                <table class="w-full border text-left bg-white text-[11px]">
+                                    <thead class="bg-navy-800 text-white">
+                                        <tr>
+                                            <th class="p-2">Comparativa de Resultados</th>
+                                            <th class="p-2 text-right">Cuero FIFO</th>
+                                            <th class="p-2 text-right">Ratán FIFO</th>
+                                            <th class="p-2 text-right font-bold bg-navy-900">Total FIFO</th>
+                                            <th class="p-2 text-right font-bold bg-crimson-700">Total PMP</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-100">
+                                        <tr><td class="p-2">Ingresos por Ventas</td><td class="p-2 text-right">$792.000.000</td><td class="p-2 text-right">$675.000.000</td><td class="p-2 text-right font-bold">$1.467.000.000</td><td class="p-2 text-right font-bold">$1.467.000.000</td></tr>
+                                        <tr><td class="p-2">(-) Costo de Ventas</td><td class="p-2 text-right">-$375.372.727</td><td class="p-2 text-right">-$232.009.091</td><td class="p-2 text-right font-bold">-$607.381.818</td><td class="p-2 text-right font-bold text-emerald-700">-$606.869.835</td></tr>
+                                        <tr class="bg-slate-50 font-bold"><td class="p-2">MARGEN BRUTO</td><td class="p-2 text-right">$416.627.273</td><td class="p-2 text-right">$442.990.909</td><td class="p-2 text-right font-bold">$859.618.182</td><td class="p-2 text-right font-bold">$860.130.165</td></tr>
+                                        <tr><td class="p-2">(-) Gastos Ventas (Fijos $150M + Comis 5%)</td><td class="p-2 text-right">-$120.581.595</td><td class="p-2 text-right">-$102.768.405</td><td class="p-2 text-right font-bold">-$223.350.000</td><td class="p-2 text-right font-bold">-$223.350.000</td></tr>
+                                        <tr class="bg-navy-50 font-bold text-navy-900"><td class="p-2">UTILIDAD NETA DEL EJERCICIO</td><td class="p-2 text-right">$296.045.678</td><td class="p-2 text-right">$340.222.504</td><td class="p-2 text-right font-bold">$636.268.182</td><td class="p-2 text-right font-bold text-crimson-600">$636.780.165</td></tr>
+                                        <tr class="bg-slate-100 font-semibold text-slate-700"><td class="p-2">Inventario Final Quedante (300 u c/u)</td><td class="p-2 text-right">$143.454.545</td><td class="p-2 text-right">$74.045.455</td><td class="p-2 text-right font-bold">$217.500.000</td><td class="p-2 text-right font-bold">$218.011.983</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="text-slate-600 text-[10px]">
+                                * Explicación económica: PMP genera una utilidad $511.983 mayor que FIFO porque el inventario final queda valorizado exactamente $511.983 más alto ($218.011.983 vs $217.500.000). A mayor inventario final, menor costo de venta y mayor utilidad operacional.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= EJERCICIO 10: ENDULZANDO MOMENTOS S.A. ================= -->
+                <article class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden" id="ej-10">
+                    <div class="bg-gradient-to-r from-navy-900 to-navy-800 p-5 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                                Guía Clasificación de Costos Oficial
+                            </span>
+                            <h3 class="text-lg font-bold mt-1 text-white">Ejercicio 10: Endulzando Momentos S.A. (Manzanas y Peras Confitadas)</h3>
+                        </div>
+                        <button onclick="toggleSol(10)" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-lg transition flex items-center gap-1 self-start sm:self-auto">
+                            <span id="btn-text-10">Ver Solución Detallada</span> <i class="fa-solid fa-chevron-down text-[10px]" id="arrow-10"></i>
+                        </button>
+                    </div>
+                    <div class="p-6 text-xs text-slate-700 space-y-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-navy-900 mb-2 text-sm">Enunciado:</h4>
+                            <p>Producción: 10.000 manzanas confitadas y 5.000 peras confitadas (Total = 15.000 unidades). Venta: 5.500 manzanas a $500 c/u. De las peras quedan 1.500 en inventario (por lo tanto se vendieron 3.500 peras). Las peras se venden 20% más caras que las manzanas ($500 × 1,2 = $600 c/u). Prorrateo de CIF en base a unidades producidas (66,67% manzanas y 33,33% peras).</p>
+                        </div>
+
+                        <div id="sol-10" class="hidden space-y-4 pt-2 font-mono text-[11px]">
+                            <div class="bg-slate-50 p-4 rounded-xl border">
+                                <p>• <strong>Costos Directos Específicos:</strong>
+                                    <br>- Manzanas Usadas (Directo a Manzanas): $500.000
+                                    <br>- Peras Utilizadas (Directo a Peras): $500.000
+                                </p>
+                                <p class="mt-2">• <strong>Costos Comunes / CIF de Producción a Prorratear (Base Unidades = 10.000 / 15.000 = 2/3 y 5.000 / 15.000 = 1/3):</strong>
+                                    <br>Agua Fábrica ($150k) + Gas Fábrica ($80k) + Bono Prod ($150k) + Fletes Frutas ($90k) + Sueldo Supervisor ($500k) + Caramelo ($300k) + Horas Extras Prod ($150k) + Sueldo Prod ($400k) + Retiro Desechos ($300k) = <strong>$2.120.000 CIF Total</strong>.
+                                    <br>&rarr; Asignado a Manzanas (2/3): <strong>$1.413.333</strong>
+                                    <br>&rarr; Asignado a Peras (1/3): <strong>$706.667</strong>
+                                </p>
+                                <p class="mt-2">• <strong>Costo Total y Unitario de Fabricación:</strong>
+                                    <br>- Manzanas: $500.000 + $1.413.333 = $1.913.333 &rarr; <strong>$191,33 c/u</strong>.
+                                    <br>- Peras: $500.000 + $706.667 = $1.206.667 &rarr; <strong>$241,33 c/u</strong>.
+                                </p>
+                                <p class="mt-2">• <strong>Valorización Inventario Final:</strong>
+                                    <br>- Manzanas (4.500 unid restantes × $191,33): <strong>$861.000</strong>
+                                    <br>- Peras (1.500 unid restantes × $241,33): <strong>$362.000</strong>
+                                    <br>&rarr; Total Inventario Final PT: <strong>$1.223.000</strong>.
+                                </p>
+                                <p class="mt-2">• <strong>Gastos del Período (No Producción):</strong> Luz sala venta ($100k) + Seguros vendedores ($220k) + Patente comercial ($500k) + Sueldo adm ($200k) + Art. escritorio ($40k) + Telefonía ($55k) + Internet ($35k) = <strong>$1.150.000</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= EJERCICIO 11: GUÍA 26/08 ================= -->
+                <article class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden" id="ej-11">
+                    <div class="bg-gradient-to-r from-navy-900 to-navy-800 p-5 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                                Guía Clase 26/08 · Ejercicio Oficial
+                            </span>
+                            <h3 class="text-lg font-bold mt-1 text-white">Ejercicio 11: Comparación Anual 2023 - 2024 (MOD Fija, FIFO y PMP)</h3>
+                        </div>
+                        <button onclick="toggleSol(11)" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-lg transition flex items-center gap-1 self-start sm:self-auto">
+                            <span id="btn-text-11">Ver Solución Detallada</span> <i class="fa-solid fa-chevron-down text-[10px]" id="arrow-11"></i>
+                        </button>
+                    </div>
+                    <div class="p-6 text-xs text-slate-700 space-y-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-navy-900 mb-2 text-sm">Enunciado:</h4>
+                            <p>Evaluación de cambio de costeo absorbente a variable entre dos períodos anuales con MOD fija y CIF fijos.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 font-mono text-[11px] mt-1">
+                                <p>• <strong>Año 2023:</strong> MPDu $150 | MODu $170 | MOD fija $1.500.000 | CIFv $1.800.000 ($600/u) | CIFf $1.200.000 ($400/u) | GAVv $100 | Prod 3.000 | IF 1.200 (Ventas 1.800).</p>
+                                <p>• <strong>Año 2024:</strong> MPDu $180 | MODu $200 | MOD fija $1.800.000 | CIFv $2.100.000 ($700/u) | CIFf $1.500.000 ($500/u) | GAVv $150 | Prod 3.000 | Ventas 2.500 | IF ¿? (1.200 + 3.000 − 2.500 = 1.700 unid).</p>
+                            </div>
+                        </div>
+
+                        <div id="sol-11" class="hidden space-y-4 pt-2 font-mono text-[11px]">
+                            <div class="bg-slate-50 p-4 rounded-xl border">
+                                <p>• <strong>Costos Unitarios 2023 (Prod = 3.000 u):</strong>
+                                    <br>Cuv 2023 = MPD $150 + MODv $170 + CIFvu ($1.800.000/3.000 = $600) = <strong>$920</strong>.
+                                    <br>Fijos unitarios 2023 = (MOD fija $1.500.000 + CIFf $1.200.000) / 3.000 = $900 ($500 MODf + $400 CIFf).
+                                    <br>Cu_abs 2023 = $920 + $900 = <strong>$1.820</strong>.
+                                </p>
+                                <p class="mt-2">• <strong>Costos Unitarios 2024 (Prod = 3.000 u):</strong>
+                                    <br>Cuv 2024 = MPD $180 + MODv $200 + CIFvu ($2.100.000/3.000 = $700) = <strong>$1.080</strong>.
+                                    <br>Fijos unitarios 2024 = (MOD fija $1.800.000 + CIFf $1.500.000) / 3.000 = $1.100 ($600 MODf + $500 CIFf).
+                                    <br>Cu_abs 2024 = $1.080 + $1.100 = <strong>$2.180</strong>.
+                                </p>
+                                <p class="mt-2">• <strong>Valorización 2024 por FIFO (Venta 2.500 = 1.200 de 2023 + 1.300 de 2024):</strong>
+                                    <br>Costo Ventas Absorbente FIFO = (1.200 × $1.820) + (1.300 × $2.180) = $2.184.000 + $2.834.000 = <strong>$5.018.000</strong>.
+                                    <br>IF Absorbente FIFO (1.700 unid restantes de 2024) = 1.700 × $2.180 = <strong>$3.706.000</strong>.
+                                </p>
+                                <p class="mt-2">• <strong>Valorización 2024 por PMP (Disponibles = 1.200 a $1.820 + 3.000 a $2.180 = 4.200 unid):</strong>
+                                    <br>Valor disponible = $2.184.000 + $6.540.000 = $8.724.000.
+                                    <br>Cu_abs PMP = $8.724.000 / 4.200 = <strong>$2.077,14</strong>.
+                                    <br>Costo Ventas PMP = 2.500 × $2.077,14 = <strong>$5.192.857</strong>.
+                                    <br>IF PMP = 1.700 × $2.077,14 = <strong>$3.531.143</strong>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CIERRE Y CONSEJOS CLAVE -->
+        <section class="bg-navy-900 text-white rounded-3xl p-8 border border-white/10 shadow-2xl">
+            <div class="max-w-4xl mx-auto space-y-4">
+                <div class="flex items-center gap-3">
+                    <span class="w-10 h-10 rounded-xl bg-crimson-600 flex items-center justify-center text-white text-xl">
+                        <i class="fa-solid fa-stamp"></i>
+                    </span>
+                    <h3 class="text-xl font-bold">Checklist Definitivo para el Día de la Solemne:</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-300">
+                    <div class="flex items-start gap-2">
+                        <i class="fa-solid fa-check text-rose-400 mt-0.5"></i>
+                        <span><strong>¿Cuadraste unidades primero?</strong> Siempre revisa II + Prod = Ventas + IF antes de multiplicar por pesos.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <i class="fa-solid fa-check text-rose-400 mt-0.5"></i>
+                        <span><strong>¿Separaste la fábrica de administración?</strong> El arriendo comercial y los sueldos de ventas jamás tocan el costo del producto.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <i class="fa-solid fa-check text-rose-400 mt-0.5"></i>
+                        <span><strong>¿Dividiste CIF fijos por producción?</strong> Nunca dividas el CIF fijo por las ventas; el costo unitario de manufactura se distribuye entre lo que se fabrica.</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <i class="fa-solid fa-check text-rose-400 mt-0.5"></i>
+                        <span><strong>¿Hiciste la conciliación?</strong> La diferencia de utilidades DEBE ser igual a la variación neta de costos fijos retenidos en existencias.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 text-center py-8 text-xs">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p class="font-bold text-slate-200">Cátedra de Contabilidad II - Preparación Solemne 1</p>
+            <p>Diseñado con rigor pedagógico según las pautas de cátedra y ayudantías de Ingeniería Comercial / Auditoría.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Datos para la tabla de Clasificación de Costos (Endulzando Momentos S.A.)
+        const itemsClasificacion = [
+            { id: 1, concepto: "Agua Fábrica", monto: 150000, comp: "F", asig: "I", func: "P", expl: "Servicio básico de planta; monto regular (Fijo), no asignable a una fruta puntual (Indirecto), Fabril (Producción)." },
+            { id: 2, concepto: "Luz Sala de Venta", monto: 100000, comp: "F", asig: "I", func: "NP", expl: "Área comercial; gasto del período (No Producción), independiente del volumen puntual de venta mensual." },
+            { id: 3, concepto: "Gas Fábrica", monto: 80000, comp: "F", asig: "I", func: "P", expl: "Insumo de caldera/cocción general; Fijo fabril, Indirecto a cada fruta, Costo de Producción." },
+            { id: 4, concepto: "Seguros Vida Vendedores", monto: 220000, comp: "F", asig: "I", func: "NP", expl: "Beneficio al personal comercial; Gasto de ventas (No Producción)." },
+            { id: 5, concepto: "Bono de Producción", monto: 150000, comp: "V", asig: "D", func: "P", expl: "Incentivo variable vinculado a la fabricación efectiva; Costo directo fabril (MOD)." },
+            { id: 6, concepto: "Fletes de Frutas a Usar", monto: 90000, comp: "V", asig: "I", func: "P", expl: "Flete de materia prima entrante; varía con la carga, prorrateable entre manzanas y peras (CIF Producción)." },
+            { id: 7, concepto: "Patente Comercial", monto: 500000, comp: "F", asig: "I", func: "NP", expl: "Tributo municipal administrativo; independiente de unidades producidas (Gasto Adm No Producción)." },
+            { id: 8, concepto: "Sueldo Supervisor de Fábrica", monto: 500000, comp: "F", asig: "I", func: "P", expl: "Jefatura de planta; remuneración fija mensual, CIF clásico (Producción)." },
+            { id: 9, concepto: "Sueldo Administración", monto: 200000, comp: "F", asig: "I", func: "NP", expl: "Personal corporativo de oficina; Gasto administrativo del período (No Producción)." },
+            { id: 10, concepto: "Manzanas Usadas", monto: 500000, comp: "V", asig: "D", func: "P", expl: "Materia Prima Directa consumida exclusivamente para manzanas confitadas (Directo, Variable, Producción)." },
+            { id: 11, concepto: "Peras Utilizadas", monto: 500000, comp: "V", asig: "D", func: "P", expl: "Materia Prima Directa consumida exclusivamente para peras confitadas (Directo, Variable, Producción)." },
+            { id: 12, concepto: "Caramelo Utilizado en Frutas", monto: 300000, comp: "V", asig: "I", func: "P", expl: "Material indirecto consumido en almíbar/baño común de ambas frutas (Variable, Indirecto, Producción)." },
+            { id: 13, concepto: "Horas Extras Producción", monto: 150000, comp: "V", asig: "D", func: "P", expl: "Sobretiempo de operarios por mayor demanda; MOD Variable fabril." },
+            { id: 14, concepto: "Sueldo Base Operarios Fábrica", monto: 400000, comp: "F", asig: "D", func: "P", expl: "Mano de obra directa fija garantizada contractualmente (MOD Directa, Producción)." },
+            { id: 15, concepto: "Artículos de Escritorio", monto: 400000, comp: "F", asig: "I", func: "NP", expl: "Papelería de oficina central; Gasto de Administración (No Producción)." },
+            { id: 16, concepto: "Retiro Desechos de Fábrica", monto: 300000, comp: "F", asig: "I", func: "P", expl: "Servicio de limpieza y residuos industriales; CIF de planta (Producción)." },
+            { id: 17, concepto: "Telefonía", monto: 55000, comp: "F", asig: "I", func: "NP", expl: "Comunicaciones de oficina; Gasto del período (No Producción)." },
+            { id: 18, concepto: "Internet", monto: 35000, comp: "F", asig: "I", func: "NP", expl: "Conectividad administrativa; Gasto de Administración (No Producción)." }
+        ];
+
+        // Cargar tabla dinámicamente
+        function renderTablaClasificacion() {
+            const tbody = document.getElementById('tabla-clasificacion-body');
+            tbody.innerHTML = '';
+            itemsClasificacion.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.id = `row-${item.id}`;
+                tr.className = "hover:bg-slate-50 transition border-b";
+                tr.innerHTML = `
+                    <td class="p-3 font-semibold text-slate-800">${item.concepto}</td>
+                    <td class="p-3 text-right font-mono text-slate-600">$${item.monto.toLocaleString('es-CL')}</td>
+                    <td class="p-3 text-center">
+                        <select id="comp-${item.id}" class="border rounded px-2 py-1 bg-white text-xs focus:ring-1 focus:ring-navy-800 outline-none">
+                            <option value="">Seleccionar...</option>
+                            <option value="F">Fijo</option>
+                            <option value="V">Variable</option>
+                        </select>
+                    </td>
+                    <td class="p-3 text-center">
+                        <select id="asig-${item.id}" class="border rounded px-2 py-1 bg-white text-xs focus:ring-1 focus:ring-navy-800 outline-none">
+                            <option value="">Seleccionar...</option>
+                            <option value="D">Directo</option>
+                            <option value="I">Indirecto</option>
+                        </select>
+                    </td>
+                    <td class="p-3 text-center">
+                        <select id="func-${item.id}" class="border rounded px-2 py-1 bg-white text-xs focus:ring-1 focus:ring-navy-800 outline-none">
+                            <option value="">Seleccionar...</option>
+                            <option value="P">Producción</option>
+                            <option value="NP">No Producción</option>
+                        </select>
+                    </td>
+                    <td class="p-3 text-center" id="status-${item.id}">
+                        <span class="text-slate-400 font-bold">-</span>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Validar Clasificación
+        function validarClasificacion() {
+            let aciertos = 0;
+            let totalPreguntas = itemsClasificacion.length * 3;
+            let fallosConcepto = [];
+
+            itemsClasificacion.forEach(item => {
+                const selComp = document.getElementById(`comp-${item.id}`).value;
+                const selAsig = document.getElementById(`asig-${item.id}`).value;
+                const selFunc = document.getElementById(`func-${item.id}`).value;
+                const statusTd = document.getElementById(`status-${item.id}`);
+
+                const rowCorrect = (selComp === item.comp && selAsig === item.asig && selFunc === item.func);
+
+                if (selComp === item.comp) aciertos++;
+                if (selAsig === item.asig) aciertos++;
+                if (selFunc === item.func) aciertos++;
+
+                if (rowCorrect) {
+                    statusTd.innerHTML = '<span class="text-emerald-600 font-bold"><i class="fa-solid fa-circle-check"></i> Correcto</span>';
+                    document.getElementById(`row-${item.id}`).classList.remove('bg-red-50');
+                    document.getElementById(`row-${item.id}`).classList.add('bg-emerald-50/40');
+                } else {
+                    statusTd.innerHTML = '<span class="text-crimson-600 font-bold"><i class="fa-solid fa-circle-xmark"></i> Revisar</span>';
+                    document.getElementById(`row-${item.id}`).classList.add('bg-red-50');
+                    document.getElementById(`row-${item.id}`).classList.remove('bg-emerald-50/40');
+                    fallosConcepto.push(`<strong>${item.concepto}:</strong> ${item.expl}`);
+                }
+            });
+
+            const resultBox = document.getElementById('resultado-clasificacion-box');
+            resultBox.classList.remove('hidden');
+
+            const porcentaje = Math.round((aciertos / totalPreguntas) * 100);
+
+            if (porcentaje >= 85) {
+                resultBox.className = "mt-4 p-4 rounded-xl border border-emerald-300 bg-emerald-50 text-emerald-900";
+                resultBox.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-award text-2xl text-emerald-600"></i>
+                        <div>
+                            <h4 class="font-bold text-sm">¡Excelente Dominio! Puntaje: ${aciertos} de ${totalPreguntas} (${porcentaje}%)</h4>
+                            <p class="text-xs mt-1">Tienes los criterios de clasificación sumamente claros para la Solemne.</p>
+                        </div>
+                    </div>
+                `;
+            } else {
+                resultBox.className = "mt-4 p-4 rounded-xl border border-amber-300 bg-amber-50 text-amber-900";
+                resultBox.innerHTML = `
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-triangle-exclamation text-xl text-amber-600 mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-sm">Puntaje Obtenido: ${aciertos} de ${totalPreguntas} (${porcentaje}%). ¡Aún podemos afinar detalles!</h4>
+                            <p class="text-xs mt-1 mb-2">Revisa las siguientes correcciones pedagógicas:</p>
+                            <ul class="list-disc list-inside text-[11px] space-y-1 font-mono text-slate-700 max-h-48 overflow-y-auto">
+                                ${fallosConcepto.map(f => `<li>${f}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Limpiar tabla
+        function resetClasificacion() {
+            itemsClasificacion.forEach(item => {
+                document.getElementById(`comp-${item.id}`).value = "";
+                document.getElementById(`asig-${item.id}`).value = "";
+                document.getElementById(`func-${item.id}`).value = "";
+                document.getElementById(`status-${item.id}`).innerHTML = '<span class="text-slate-400 font-bold">-</span>';
+                document.getElementById(`row-${item.id}`).className = "hover:bg-slate-50 transition border-b";
+            });
+            document.getElementById('resultado-clasificacion-box').classList.add('hidden');
+        }
+
+        // Lógica de Comentes
+        const pautaComentes = {
+            1: {
+                correct: 'F',
+                explicacion: '<strong>FALSO:</strong> En costeo variable, los costos fijos de fabricación se cargan íntegramente al resultado del período. Por lo tanto, producir unidades extra sin venderlas NO altera la utilidad; la utilidad bajo costeo variable depende exclusivamente de las unidades VENDIDAS y no de las producidas.'
+            },
+            2: {
+                correct: 'I',
+                explicacion: '<strong>INCIERTO:</strong> Si bien la regla habitual cuando Producción > Ventas es que la utilidad absorbente supera a la variable por la retención de CIF fijos en bodega, esto es estrictamente cierto solo si NO existe un inventario inicial considerable con costos fijos altos que hayan sido liberados al costo de venta del período actual. La relación matemática exacta exige comparar el CIF fijo en IF versus el CIF fijo en II.'
+            },
+            3: {
+                correct: 'F',
+                explicacion: '<strong>FALSO:</strong> Un costo puede tener comportamiento variable pero pertenecer a la función de ventas o administración (por ejemplo, comisiones a vendedores de un 3% o fletes de despacho a clientes). Estas partidas son gastos del período y NUNCA forman parte del costo inventariable del producto.'
+            },
+            4: {
+                correct: 'V',
+                explicacion: '<strong>VERDADERO:</strong> Es la crítica clásica de la gestión al costeo absorbente. Al aumentar la producción, el CIF fijo se diluye en más unidades y una porción significativa queda activada en el inventario final (balance) en lugar de pasar por resultados (P&L), incrementando artificialmente el margen bruto del año.'
+            },
+            5: {
+                correct: 'F',
+                explicacion: '<strong>FALSO:</strong> La elección entre FIFO y PMP define cómo SALEN los costos del inventario (cuál capa se vende primero o si se promedia). Quien define qué partidas ENTRAN al producto es el método de costeo (Absorbente vs. Variable).'
+            },
+            6: {
+                correct: 'V',
+                explicacion: '<strong>VERDADERO:</strong> Los métodos de costeo no crean ni destruyen costos en el tiempo; simplemente difieren o anticipan el momento en que los CIF fijos afectan el Estado de Resultados. Cuando todo el stock acumulado se liquida a cero, todas las utilidades convergen a la misma cifra acumulada.'
+            }
+        };
+
+        function checkComente(id, userChoice, btn) {
+            const feed = document.getElementById(`comente-feed-${id}`);
+            const data = pautaComentes[id];
+            feed.classList.remove('hidden');
+
+            const isCorrect = (userChoice === data.correct);
+            if (isCorrect) {
+                feed.className = "mt-3 p-3.5 bg-emerald-50 border border-emerald-200 text-emerald-900 rounded-lg text-xs leading-relaxed";
+                feed.innerHTML = `<span class="font-bold text-emerald-700"><i class="fa-solid fa-circle-check"></i> ¡Excelente calificación! (${data.correct})</span><br>${data.explicacion}`;
+            } else {
+                feed.className = "mt-3 p-3.5 bg-red-50 border border-red-200 text-red-900 rounded-lg text-xs leading-relaxed";
+                feed.innerHTML = `<span class="font-bold text-crimson-600"><i class="fa-solid fa-circle-xmark"></i> Calificación incorrecta. Era (${data.correct})</span><br>${data.explicacion}`;
+            }
+        }
+
+        // Lógica de Selección Múltiple
+        function checkMC(questionId, option, isCorrect) {
+            const container = document.getElementById(`mc-${questionId}`);
+            const feedback = container.querySelector('.feedback');
+            const buttons = container.querySelectorAll('.opt');
+
+            buttons.forEach(b => {
+                b.disabled = true;
+                b.classList.remove('hover:bg-slate-50');
+            });
+
+            feedback.classList.remove('hidden');
+            if (isCorrect) {
+                feedback.className = "feedback mt-3 p-3 rounded text-xs bg-emerald-50 border border-emerald-300 text-emerald-900 font-semibold";
+                feedback.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600"></i> ¡Correcto! Has seleccionado la alternativa exacta.`;
+            } else {
+                feedback.className = "feedback mt-3 p-3 rounded text-xs bg-red-50 border border-red-300 text-red-900 font-semibold";
+                feedback.innerHTML = `<i class="fa-solid fa-circle-xmark text-crimson-600"></i> Incorrecto. Revisa el fundamento conceptual y vuelve a intentarlo.`;
+            }
+        }
+
+        // Toggle para Solucionarios
+        function toggleSol(id) {
+            const sol = document.getElementById(`sol-${id}`);
+            const btnText = document.getElementById(`btn-text-${id}`);
+            const arrow = document.getElementById(`arrow-${id}`);
+
+            if (sol.classList.contains('hidden')) {
+                sol.classList.remove('hidden');
+                btnText.textContent = "Ocultar Solución";
+                arrow.className = "fa-solid fa-chevron-up text-[10px]";
+            } else {
+                sol.classList.add('hidden');
+                btnText.textContent = "Ver Solución Detallada";
+                arrow.className = "fa-solid fa-chevron-down text-[10px]";
+            }
+        }
+
+        function toggleAllSolutions(show) {
+            for (let i = 1; i <= 11; i++) {
+                const sol = document.getElementById(`sol-${i}`);
+                const btnText = document.getElementById(`btn-text-${i}`);
+                const arrow = document.getElementById(`arrow-${i}`);
+                if (sol) {
+                    if (show) {
+                        sol.classList.remove('hidden');
+                        if (btnText) btnText.textContent = "Ocultar Solución";
+                        if (arrow) arrow.className = "fa-solid fa-chevron-up text-[10px]";
+                    } else {
+                        sol.classList.add('hidden');
+                        if (btnText) btnText.textContent = "Ver Solución Detallada";
+                        if (arrow) arrow.className = "fa-solid fa-chevron-down text-[10px]";
+                    }
+                }
+            }
+        }
+
+        // Inicializar componentes al cargar
+        window.addEventListener('DOMContentLoaded', () => {
+            renderTablaClasificacion();
+        });
+    </script>
+</body>
+</html>
